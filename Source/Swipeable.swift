@@ -10,14 +10,20 @@ import UIKit
 // MARK: - Internal 
 
 protocol Swipeable {
-    var actionsView: SwipeActionsView? { get }
+    associatedtype ActionsView
+    var actionsView: ActionsView? { get }
     
     var state: SwipeState { get }
     
     var frame: CGRect { get }
 }
 
-extension SwipeTableViewCell: Swipeable {}
+extension SwipeTableViewCell: Swipeable {
+    typealias ActionsView = SwipeActionsTableView
+}
+extension SwipeCollectionViewCell: Swipeable {
+    typealias ActionsView = SwipeActionsCollectionView
+}
 
 enum SwipeState: Int {
     case center = 0

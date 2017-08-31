@@ -12,7 +12,7 @@
 		3F234AC81E44A7A400E22A38 /* SwipeCellKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F234AC61E44A7A400E22A38 /* SwipeCellKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F234AD61E44A94F00E22A38 /* SwipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F234AD21E44A94F00E22A38 /* SwipeTableViewCell.swift */; };
 		3F234AD71E44A94F00E22A38 /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F234AD31E44A94F00E22A38 /* SwipeAction.swift */; };
-		3F234AD81E44A94F00E22A38 /* SwipeActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F234AD41E44A94F00E22A38 /* SwipeActionsView.swift */; };
+		3F234AD81E44A94F00E22A38 /* SwipeActionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F234AD41E44A94F00E22A38 /* SwipeActionsTableView.swift */; };
 		3F234AD91E44A94F00E22A38 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F234AD51E44A94F00E22A38 /* Extensions.swift */; };
 		3F3ED7101E486993009DD5D8 /* SwipeActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3ED70F1E486993009DD5D8 /* SwipeActionButton.swift */; };
 		3F3ED7121E48AF37009DD5D8 /* SwipeTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3ED7111E48AF37009DD5D8 /* SwipeTableViewCellDelegate.swift */; };
@@ -24,6 +24,12 @@
 		3FD016701E696D8D00B54FFC /* SwipeTransitionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD0166F1E696D8D00B54FFC /* SwipeTransitionLayout.swift */; };
 		3FD016DF1E6D778700B54FFC /* SwipeExpanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD016DE1E6D778700B54FFC /* SwipeExpanding.swift */; };
 		3FD016E11E6D7F7700B54FFC /* SwipeActionTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD016E01E6D7F7700B54FFC /* SwipeActionTransitioning.swift */; };
+		B66001AD1F555219006DF758 /* SwipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66001AC1F555219006DF758 /* SwipeCollectionViewCell.swift */; };
+		B66001AF1F55550A006DF758 /* SwipeCollectionViewCell+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66001AE1F55550A006DF758 /* SwipeCollectionViewCell+Accessibility.swift */; };
+		B66001B11F5555DE006DF758 /* SwipeCollectionViewCell+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66001B01F5555DE006DF758 /* SwipeCollectionViewCell+Display.swift */; };
+		B66001B31F555631006DF758 /* SwipeCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66001B21F555631006DF758 /* SwipeCollectionViewCellDelegate.swift */; };
+		B66001B51F555868006DF758 /* SwipeCollectionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66001B41F555868006DF758 /* SwipeCollectionOptions.swift */; };
+		B66001B71F57A2A9006DF758 /* SwipeActionsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66001B61F57A2A9006DF758 /* SwipeActionsCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +40,7 @@
 		3F234AC71E44A7A400E22A38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F234AD21E44A94F00E22A38 /* SwipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SwipeTableViewCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3F234AD31E44A94F00E22A38 /* SwipeAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeAction.swift; sourceTree = "<group>"; };
-		3F234AD41E44A94F00E22A38 /* SwipeActionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeActionsView.swift; sourceTree = "<group>"; };
+		3F234AD41E44A94F00E22A38 /* SwipeActionsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeActionsTableView.swift; sourceTree = "<group>"; };
 		3F234AD51E44A94F00E22A38 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3F3ED70F1E486993009DD5D8 /* SwipeActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeActionButton.swift; sourceTree = "<group>"; };
 		3F3ED7111E48AF37009DD5D8 /* SwipeTableViewCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeTableViewCellDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +52,12 @@
 		3FD0166F1E696D8D00B54FFC /* SwipeTransitionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeTransitionLayout.swift; sourceTree = "<group>"; };
 		3FD016DE1E6D778700B54FFC /* SwipeExpanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeExpanding.swift; sourceTree = "<group>"; };
 		3FD016E01E6D7F7700B54FFC /* SwipeActionTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeActionTransitioning.swift; sourceTree = "<group>"; };
+		B66001AC1F555219006DF758 /* SwipeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeCollectionViewCell.swift; sourceTree = "<group>"; };
+		B66001AE1F55550A006DF758 /* SwipeCollectionViewCell+Accessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwipeCollectionViewCell+Accessibility.swift"; sourceTree = "<group>"; };
+		B66001B01F5555DE006DF758 /* SwipeCollectionViewCell+Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwipeCollectionViewCell+Display.swift"; sourceTree = "<group>"; };
+		B66001B21F555631006DF758 /* SwipeCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
+		B66001B41F555868006DF758 /* SwipeCollectionOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeCollectionOptions.swift; sourceTree = "<group>"; };
+		B66001B61F57A2A9006DF758 /* SwipeActionsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeActionsCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +93,18 @@
 				3F4C721E1E7E8C180097399A /* Swipeable.swift */,
 				170BCE711E8340C000F46E18 /* SwipeAnimator.swift */,
 				3F234AD21E44A94F00E22A38 /* SwipeTableViewCell.swift */,
+				B66001AC1F555219006DF758 /* SwipeCollectionViewCell.swift */,
 				3FA78CA01E5A5A0B00A1D8FF /* SwipeTableViewCell+Accessibility.swift */,
+				B66001AE1F55550A006DF758 /* SwipeCollectionViewCell+Accessibility.swift */,
 				3F6433D91EA53AC3008B1D48 /* SwipeTableViewCell+Display.swift */,
+				B66001B01F5555DE006DF758 /* SwipeCollectionViewCell+Display.swift */,
 				3F3ED7111E48AF37009DD5D8 /* SwipeTableViewCellDelegate.swift */,
+				B66001B21F555631006DF758 /* SwipeCollectionViewCellDelegate.swift */,
 				3F51DA061E462F9B005467BD /* SwipeTableOptions.swift */,
+				B66001B41F555868006DF758 /* SwipeCollectionOptions.swift */,
 				3FD0166F1E696D8D00B54FFC /* SwipeTransitionLayout.swift */,
-				3F234AD41E44A94F00E22A38 /* SwipeActionsView.swift */,
+				3F234AD41E44A94F00E22A38 /* SwipeActionsTableView.swift */,
+				B66001B61F57A2A9006DF758 /* SwipeActionsCollectionView.swift */,
 				3F234AD31E44A94F00E22A38 /* SwipeAction.swift */,
 				3F3ED70F1E486993009DD5D8 /* SwipeActionButton.swift */,
 				3FD016E01E6D7F7700B54FFC /* SwipeActionTransitioning.swift */,
@@ -187,19 +205,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F234AD81E44A94F00E22A38 /* SwipeActionsView.swift in Sources */,
+				3F234AD81E44A94F00E22A38 /* SwipeActionsTableView.swift in Sources */,
 				3F234AD71E44A94F00E22A38 /* SwipeAction.swift in Sources */,
+				B66001B51F555868006DF758 /* SwipeCollectionOptions.swift in Sources */,
 				3F3ED7101E486993009DD5D8 /* SwipeActionButton.swift in Sources */,
+				B66001B11F5555DE006DF758 /* SwipeCollectionViewCell+Display.swift in Sources */,
 				3F234AD61E44A94F00E22A38 /* SwipeTableViewCell.swift in Sources */,
 				3F19AD041E8D711C006B4B3A /* SwipeFeedback.swift in Sources */,
+				B66001B31F555631006DF758 /* SwipeCollectionViewCellDelegate.swift in Sources */,
 				3FD016701E696D8D00B54FFC /* SwipeTransitionLayout.swift in Sources */,
 				3FA78CA11E5A5A0B00A1D8FF /* SwipeTableViewCell+Accessibility.swift in Sources */,
+				B66001AD1F555219006DF758 /* SwipeCollectionViewCell.swift in Sources */,
 				3F4C721F1E7E8C180097399A /* Swipeable.swift in Sources */,
 				3F4C721D1E7E8BC20097399A /* SwipeExpansionStyle.swift in Sources */,
+				B66001AF1F55550A006DF758 /* SwipeCollectionViewCell+Accessibility.swift in Sources */,
 				3F3ED7121E48AF37009DD5D8 /* SwipeTableViewCellDelegate.swift in Sources */,
 				3FD016E11E6D7F7700B54FFC /* SwipeActionTransitioning.swift in Sources */,
 				3FD016DF1E6D778700B54FFC /* SwipeExpanding.swift in Sources */,
 				3F51DA071E462F9B005467BD /* SwipeTableOptions.swift in Sources */,
+				B66001B71F57A2A9006DF758 /* SwipeActionsCollectionView.swift in Sources */,
 				170BCE721E8340C000F46E18 /* SwipeAnimator.swift in Sources */,
 				3F6433DA1EA53AC3008B1D48 /* SwipeTableViewCell+Display.swift in Sources */,
 				3F234AD91E44A94F00E22A38 /* Extensions.swift in Sources */,

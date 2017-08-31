@@ -17,8 +17,9 @@ public struct SwipeTableOptions {
     
     /// The object that is notified when expansion changes.
     ///
-    /// - note: If an `expansionDelegate` is not provided, and the expanding action is configured with a clear background, the system automatically uses the default `ScaleAndAlphaExpansion` to show/hide underlying actions.
-    public var expansionDelegate: SwipeExpanding?
+    /// - note: If an `expansionTableDelegate` is not provided, and the expanding action is configured with a clear background, the system automatically uses the default `ScaleAndAlphaExpansion` to show/hide underlying actions.
+    public var expansionTableDelegate: SwipeExpanding?
+    public var expansionCollectionDelegate: SwipeExpanding?
     
     /// The background color behind the action buttons.
     public var backgroundColor: UIColor?

@@ -82,10 +82,18 @@ public struct SwipeExpansionStyle {
         self.completionAnimation = completionAnimation
     }
     
-    func shouldExpand(view: Swipeable, gesture: UIPanGestureRecognizer, in superview: UIView) -> Bool {
+    func shouldExpand<T:Swipeable> (view: T, gesture: UIPanGestureRecognizer, in superview: UIView) -> Bool {
         guard let actionsView = view.actionsView else { return false }
         
-        guard abs(view.frame.minX) >= actionsView.preferredWidth else { return false }
+        if let _actionView = actionsView as? SwipeActionsTableView {
+            print(_actionView.preferredWidth)
+            guard abs(view.frame.minX) >= _actionView.preferredWidth else { return false }
+        } else if let _actionView = actionsView as? SwipeActionsCollectionView {
+            print(_actionView.preferredWidth)
+            guard abs(view.frame.minX) >= _actionView.preferredWidth else { return false }
+        } else {
+            return false
+        }
         
         if abs(view.frame.minX) >= target.offset(for: view, in: superview, minimumOverscroll: minimumTargetOverscroll) {
             return true
@@ -100,7 +108,7 @@ public struct SwipeExpansionStyle {
         return false
     }
     
-    func targetOffset(for view: Swipeable, in superview: UIView) -> CGFloat {
+    func targetOffset<T:Swipeable>(for view: T, in superview: UIView) -> CGFloat {
         return target.offset(for: view, in: superview, minimumOverscroll: minimumTargetOverscroll)
     }
 }
@@ -114,9 +122,8 @@ extension SwipeExpansionStyle {
         /// The target is specified by a edge inset.
         case edgeInset(CGFloat)
         
-        func offset(for view: Swipeable, in superview: UIView, minimumOverscroll: CGFloat) -> CGFloat {
-            guard let actionsView = view.actionsView else { return .greatestFiniteMagnitude }
-            
+        func offset<T:Swipeable>(for view: T, in superview: UIView, minimumOverscroll: CGFloat) -> CGFloat {
+          
             let offset: CGFloat = {
                 switch self {
                 case .percentage(let value):
@@ -125,8 +132,16 @@ extension SwipeExpansionStyle {
                     return superview.bounds.width - value
                 }
             }()
-            
-            return max(actionsView.preferredWidth + minimumOverscroll, offset)
+
+            if let _actionsView = view.actionsView as? SwipeActionsTableView {
+                print(_actionsView.preferredWidth)
+                return max(_actionsView.preferredWidth + minimumOverscroll, offset)
+            } else if let _actionsView = view.actionsView as? SwipeActionsCollectionView {
+                print(_actionsView.preferredWidth)
+                return max(_actionsView.preferredWidth + minimumOverscroll, offset)
+            } else {
+                return .greatestFiniteMagnitude
+            }
         }
     }
     
@@ -138,16 +153,35 @@ extension SwipeExpansionStyle {
         /// The trigger is specified by the distance in points past the fully exposed action view.
         case overscroll(CGFloat)
         
-        func isTriggered(view: Swipeable, gesture: UIPanGestureRecognizer, in superview: UIView) -> Bool {
+        func isTriggered<T: Swipeable>(view: T, gesture: UIPanGestureRecognizer, in superview: UIView) -> Bool {
             guard let actionsView = view.actionsView else { return false }
             
             switch self {
             case .touchThreshold(let value):
                 let location = gesture.location(in: superview).x
-                let locationRatio = (actionsView.orientation == .left ? location : superview.bounds.width - location) / superview.bounds.width
+                
+                var locationRatio:CGFloat
+                if let _actionsView = actionsView as? SwipeActionsTableView {
+                    print(_actionsView.preferredWidth)
+                    locationRatio = (_actionsView.orientation == .left ? location : superview.bounds.width - location) / superview.bounds.width
+                } else if let _actionsView = actionsView as? SwipeActionsCollectionView {
+                    print(_actionsView.preferredWidth)
+                    locationRatio = (_actionsView.orientation == .left ? location : superview.bounds.width - location) / superview.bounds.width
+                } else {
+                    return false
+                }
+
                 return locationRatio > value
             case .overscroll(let value):
-                return abs(view.frame.minX) > actionsView.preferredWidth + value
+                if let _actionsView = actionsView as? SwipeActionsTableView {
+                    print(_actionsView.preferredWidth)
+                    return abs(view.frame.minX) > _actionsView.preferredWidth + value
+                } else if let _actionsView = actionsView as? SwipeActionsCollectionView {
+                    print(_actionsView.preferredWidth)
+                    return abs(view.frame.minX) > _actionsView.preferredWidth + value
+                } else {
+                    return false
+                }
             }
         }
     }

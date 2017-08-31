@@ -32,13 +32,22 @@ struct ActionsViewLayoutContext {
         self.minimumButtonWidth = minimumButtonWidth
     }
     
-    static func newContext(for actionsView: SwipeActionsView) -> ActionsViewLayoutContext {
+    static func newContext(for actionsView: SwipeActionsTableView) -> ActionsViewLayoutContext {
         return ActionsViewLayoutContext(numberOfActions: actionsView.actions.count,
                                         orientation: actionsView.orientation,
                                         contentSize: actionsView.contentSize,
                                         visibleWidth: actionsView.visibleWidth,
                                         minimumButtonWidth: actionsView.minimumButtonWidth)
     }
+    
+    static func newContext(for actionsView: SwipeActionsCollectionView) -> ActionsViewLayoutContext {
+        return ActionsViewLayoutContext(numberOfActions: actionsView.actions.count,
+                                        orientation: actionsView.orientation,
+                                        contentSize: actionsView.contentSize,
+                                        visibleWidth: actionsView.visibleWidth,
+                                        minimumButtonWidth: actionsView.minimumButtonWidth)
+    }
+
 }
 
 // MARK: - Supported Layout Implementations 

@@ -86,10 +86,8 @@ public struct SwipeExpansionStyle {
         guard let actionsView = view.actionsView else { return false }
         
         if let _actionView = actionsView as? SwipeActionsTableView {
-            print(_actionView.preferredWidth)
             guard abs(view.frame.minX) >= _actionView.preferredWidth else { return false }
         } else if let _actionView = actionsView as? SwipeActionsCollectionView {
-            print(_actionView.preferredWidth)
             guard abs(view.frame.minX) >= _actionView.preferredWidth else { return false }
         } else {
             return false
@@ -134,10 +132,8 @@ extension SwipeExpansionStyle {
             }()
 
             if let _actionsView = view.actionsView as? SwipeActionsTableView {
-                print(_actionsView.preferredWidth)
                 return max(_actionsView.preferredWidth + minimumOverscroll, offset)
             } else if let _actionsView = view.actionsView as? SwipeActionsCollectionView {
-                print(_actionsView.preferredWidth)
                 return max(_actionsView.preferredWidth + minimumOverscroll, offset)
             } else {
                 return .greatestFiniteMagnitude
@@ -162,10 +158,8 @@ extension SwipeExpansionStyle {
                 
                 var locationRatio:CGFloat
                 if let _actionsView = actionsView as? SwipeActionsTableView {
-                    print(_actionsView.preferredWidth)
                     locationRatio = (_actionsView.orientation == .left ? location : superview.bounds.width - location) / superview.bounds.width
                 } else if let _actionsView = actionsView as? SwipeActionsCollectionView {
-                    print(_actionsView.preferredWidth)
                     locationRatio = (_actionsView.orientation == .left ? location : superview.bounds.width - location) / superview.bounds.width
                 } else {
                     return false
@@ -174,10 +168,8 @@ extension SwipeExpansionStyle {
                 return locationRatio > value
             case .overscroll(let value):
                 if let _actionsView = actionsView as? SwipeActionsTableView {
-                    print(_actionsView.preferredWidth)
                     return abs(view.frame.minX) > _actionsView.preferredWidth + value
                 } else if let _actionsView = actionsView as? SwipeActionsCollectionView {
-                    print(_actionsView.preferredWidth)
                     return abs(view.frame.minX) > _actionsView.preferredWidth + value
                 } else {
                     return false
